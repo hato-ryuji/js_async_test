@@ -11,10 +11,10 @@ function asyncProcess(value, delay){
     });
 }
 
-Promise.allSettled([
-        asyncProcess('その１', 100)
+Promise.race([
+        asyncProcess('その１', 1000)
         ,asyncProcess('', 200)
-        ,asyncProcess('その３', 50)
+        ,asyncProcess('その３', 1000)
     ])
     .then(aaaa => {
         console.log(aaaa);
